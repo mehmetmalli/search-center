@@ -1,5 +1,5 @@
 # Search Center
-A mobile friendly search center/homepage powered by [Alpine.js](https://alpinejs.dev/)
+A mobile friendly search center/homepage powered by [Alpine.js](https://alpinejs.dev/).
 
 Trying out this minimal and lightweight JavaScript framework.
 
