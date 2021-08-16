@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniSearch</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="main" x-data="{term: ''}">
+        <input type="text" class="search-bar" x-model="term" placeholder="Enter your search term" x-ref="search" x-init="$refs.search.focus()">
+        <div class="buttons-container">
+            <template x-for="p in $store.providers">
+                <button class="search-button" @click="window.open(p.url+term)" x-text="p.name"></button>
+            </template>
+        </div>
+    </div>
+    <script src="./providers.js"></script>
+    <script>
+        document.addEventListener('alpine:init', () => { Alpine.store('providers', providers); });
+    </script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+
+</html>
